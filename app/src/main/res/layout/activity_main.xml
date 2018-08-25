@@ -91,7 +91,7 @@
                             android:layout_height="wrap_content" />
 
                         <TextView
-                            android:text="परिचय"
+                            android:text="गृहपृष्ठ"
                             android:textAlignment="center"
                             android:textColor="@android:color/black"
                             android:textSize="15sp"
@@ -130,7 +130,7 @@
                             android:layout_height="wrap_content" />
 
                         <TextView
-                            android:text="वडा कार्यालयहरु"
+                            android:text="कार्यालयको परिचय"
                             android:textAlignment="center"
                             android:textColor="@android:color/black"
                             android:textSize="15sp"
@@ -172,7 +172,7 @@
                             android:layout_height="wrap_content" />
 
                         <TextView
-                            android:text="कार्यक्रम "
+                            android:text="बजेट कार्यक्रम "
                             android:textAlignment="center"
                             android:textColor="@android:color/black"
                             android:textSize="15sp"
@@ -253,7 +253,7 @@
                             android:layout_height="wrap_content" />
 
                         <TextView
-                            android:text="प्रतिवेदन"
+                            android:text="जन प्रतिनिधि"
                             android:textAlignment="center"
                             android:textColor="@android:color/black"
                             android:textSize="15sp"
