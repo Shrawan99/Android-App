@@ -14,6 +14,6 @@ public class New5Activity extends AppCompatActivity {
         WebView webView = (WebView)findViewById(R.id.webView);
         webView.getSettings().setJavaScriptEnabled(true);
         webView.setWebViewClient(new WebViewClient());
-        webView.loadUrl("http://thorimun.gov.np/ward-offices");
+        webView.loadUrl("http://thorimun.gov.np/officials");
     }
 }
