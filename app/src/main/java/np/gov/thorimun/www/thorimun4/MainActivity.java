@@ -109,6 +109,11 @@ public class MainActivity extends AppCompatActivity
                         Intent intent = new Intent(MainActivity.this, New8Activity.class);
                         startActivity(intent);
                     }
+                    else if (finalI == 8)   //open activity one
+                    {
+                        Intent intent = new Intent(MainActivity.this, jsonTest.class);
+                        startActivity(intent);
+                    }
 
 
                 }
