@@ -2,6 +2,7 @@ package np.gov.thorimun.www.thorimun4;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
@@ -15,5 +16,7 @@ public class New4Activity extends AppCompatActivity {
         webView.getSettings().setJavaScriptEnabled(true);
         webView.setWebViewClient(new WebViewClient());
         webView.loadUrl("http://thorimun.gov.np/sample-forms");
+        webView.getSettings().setCacheMode(WebSettings.LOAD_DEFAULT);
+        webView.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
     }
 }
