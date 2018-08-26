@@ -34,13 +34,13 @@ public class jsonTest extends AppCompatActivity {
     String data;
     JSONArray jsonArray;
     Boolean dataReady = false;
-    final String documentString = "PDF Document";
+    final String documentString = "डाउनलोड गर्नुहोस";
 
     private static ViewPager mPager;
     private static int currentPage = 0;
     private static int NUM_PAGES = 0;
-    private static final Integer[] IMAGES= {R.drawable.ic_launcher_foreground,R.mipmap.ic_launcher,R.drawable.ic_launcher_foreground,R.drawable.ic_launcher_foreground};
-    private ArrayList<Integer> ImagesArray = new ArrayList<Integer>();
+    //private static final Integer[] IMAGES= {R.drawable.ic_launcher_foreground,R.mipmap.ic_launcher,R.drawable.ic_launcher_foreground,R.drawable.ic_launcher_foreground};
+    //private ArrayList<Integer> ImagesArray = new ArrayList<Integer>();
 
     public void print(String value) {
         Log.i("TestIO", value);
@@ -76,32 +76,32 @@ public class jsonTest extends AppCompatActivity {
 
     Thread dataThread = new Thread(dataRunnable);
 
-    private void init() {
-        for(int i=0;i<IMAGES.length;i++)
-            ImagesArray.add(IMAGES[i]);
+  //*  private void init() {
+    //    for(int i=0;i<IMAGES.length;i++)
+      //      ImagesArray.add(IMAGES[i]);
 
-        mPager = (ViewPager) findViewById(R.id.pager);
-        mPager.setAdapter(new ImageAdapter(jsonTest.this,ImagesArray));
+       // mPager = (ViewPager) findViewById(R.id.pager);
+        //mPager.setAdapter(new ImageAdapter(jsonTest.this,ImagesArray));
 
-        NUM_PAGES =IMAGES.length;
+        //NUM_PAGES =IMAGES.length;
 
-        final Handler handler = new Handler();
-        final Runnable Update = new Runnable() {
-            public void run() {
-                if (currentPage == NUM_PAGES) {
-                    currentPage = 0;
-                }
-                mPager.setCurrentItem(currentPage++, true);
-            }
-        };
-        Timer swipeTimer = new Timer();
-        swipeTimer.schedule(new TimerTask() {
-            @Override
-            public void run() {
-                handler.post(Update);
-            }
-        }, 3000, 3000);
-    }
+        //final Handler handler = new Handler();
+     //   final Runnable Update = new Runnable() {
+         //   public void run() {
+             //   if (currentPage == NUM_PAGES) {
+          //          currentPage = 0;
+              //  }
+            //    mPager.setCurrentItem(currentPage++, true);
+            //}
+       // };
+       // Timer swipeTimer = new Timer();
+      //  swipeTimer.schedule(new TimerTask() {
+      //      @Override
+        //    public void run() {
+       //         handler.post(Update);
+       //     }
+      //  }, 3000, 3000);
+    //}
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -112,7 +112,7 @@ public class jsonTest extends AppCompatActivity {
 
         dataThread.start();
 
-        init();
+       // init();
 
         while (!dataReady);
 
