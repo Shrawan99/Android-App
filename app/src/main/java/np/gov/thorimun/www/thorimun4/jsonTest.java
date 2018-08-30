@@ -2,27 +2,26 @@ package np.gov.thorimun.www.thorimun4;
 
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
-import android.os.Handler;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ExpandableListView;
+import android.widget.Toast;
 //import android.widget.LinearLayout;
 //import android.widget.TextView;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.lang.reflect.Array;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.Timer;
-import java.util.TimerTask;
 
 import org.json.JSONArray;
 
@@ -35,6 +34,8 @@ public class jsonTest extends AppCompatActivity {
     JSONArray jsonArray;
     Boolean dataReady = false;
     final String documentString = "डाउनलोड गर्नुहोस";
+
+    private static boolean internetConnectivityFlag = false;
 
     private static ViewPager mPager;
     private static int currentPage = 0;
@@ -67,8 +68,13 @@ public class jsonTest extends AppCompatActivity {
                 print(jsonArray.getJSONObject(0).getString("Title"));
 
                 dataReady = true;
+                internetConnectivityFlag = true;
+
 
             } catch (Exception e) {
+                internetConnectivityFlag = false;
+                Toast.makeText(jsonTest.this,"No Internet Connection, Directing to Cached Mode", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(jsonTest.this, New6Activity.class);
                 e.printStackTrace();
             }
         }
@@ -120,25 +126,54 @@ public class jsonTest extends AppCompatActivity {
             listNoticeHeader = new ArrayList<String>();
             listNoticeBody = new HashMap<String, List<String>>();
             List<String> child;
+            SharedPreferences NoticesPreferences = getSharedPreferences("msettings", MODE_PRIVATE);
 
-            for (int i = 0; i < jsonArray.length(); i++) {
-                child = new ArrayList<String>();
-                listNoticeHeader.add(jsonArray.getJSONObject(i).getString("Title") + "\n");
-                if (jsonArray.getJSONObject(i).getString("Body").length() != 0) {
-                    child.add(jsonArray.getJSONObject(i).getString("Body"));
+            if (internetConnectivityFlag) {
+                SharedPreferences.Editor editor = NoticesPreferences.edit();
+                editor.putInt("listLength", jsonArray.length());
+                for (int i = 0; i < jsonArray.length(); i++) {
+                    child = new ArrayList<String>();
+                    listNoticeHeader.add(jsonArray.getJSONObject(i).getString("Title") + "\n");
+                    editor.putString("Title" + i, jsonArray.getJSONObject(i).getString("Title"));
+                    if (jsonArray.getJSONObject(i).getString("Body").length() != 0) {
+                        child.add(jsonArray.getJSONObject(i).getString("Body"));
+                        editor.putString("Body" + i, jsonArray.getJSONObject(i).getString("Body"));
+                    }
+                    if (jsonArray.getJSONObject(i).getString("Documents").length() != 0) {
+                        //   child.add(jsonArray.getJSONObject(i).getString("Document"));
+                        child.add(documentString);
+                        editor.putString("Documents" + i, documentString);
+                    }
+                    listNoticeBody.put(listNoticeHeader.get(i), child);
+
                 }
-                if (jsonArray.getJSONObject(i).getString("Documents").length() != 0) {
-                 //   child.add(jsonArray.getJSONObject(i).getString("Document"));
-                    child.add(documentString);
+                editor.commit();
+            } else {
+                Integer listLength = NoticesPreferences.getInt("listLenght", 0);
+                for (int i = 0; i < listLength; i++) {
+                    child = new ArrayList<String>();
+//                    listNoticeHeader.add(jsonArray.getJSONObject(i).getString("Title") + "\n");
+                    listNoticeHeader.add(NoticesPreferences.getString("Title" + i, "NA"));
+                    if (!NoticesPreferences.getString("Body" + i, "NA").contentEquals("NA")) {
+//                        child.add(jsonArray.getJSONObject(i).getString("Body"));
+                        child.add(NoticesPreferences.getString("Body" + i, "NA"));
+                    }
+                    if (!NoticesPreferences.getString("Documents" + i, "NA").contentEquals("NA")) {
+                        //   child.add(jsonArray.getJSONObject(i).getString("Document"));
+                        child.add(NoticesPreferences.getString("Documents" + i, "NA"));
+                    }
+                    listNoticeBody.put(listNoticeHeader.get(i), child);
                 }
-                listNoticeBody.put(listNoticeHeader.get(i), child);
             }
+            ArrayList<String> map2=(ArrayList<String>) NoticesPreferences.getAll();
+            HashMap<String, List<String>> map=(HashMap<String, List<String>>)NoticesPreferences.getAll();
 
             listAdapter = new ListAdapter(this, listNoticeHeader, listNoticeBody);
 
             expandableListView.setAdapter(listAdapter);
+
         } catch (Exception e) {
-            e.printStackTrace();
+                 e.printStackTrace();
         }
 
         expandableListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
@@ -152,6 +187,7 @@ public class jsonTest extends AppCompatActivity {
                         intent.setData(Uri.parse(urlLink));
                         startActivity(intent);
                     } catch (Exception e) {
+
                         e.printStackTrace();
                     }
                 }

@@ -24,7 +24,6 @@ public class MainActivity extends AppCompatActivity
     DrawerLayout drawer;
     NavigationView navigationView;
     Toolbar toolbar=null;
-
     GridLayout mainGrid;
 
     @Override
@@ -74,42 +73,42 @@ public class MainActivity extends AppCompatActivity
                         Intent intent = new Intent(MainActivity.this, New1Activity.class);
                         startActivity(intent);
                     }
-                    else if (finalI == 1)   //open activity one
+                    else if (finalI == 1)   //Home Page
                     {
                         Intent intent = new Intent(MainActivity.this, New2Activity.class);
                         startActivity(intent);
                     }
-                    else if (finalI == 2)   //open activity one
+                    else if (finalI == 2)   //Office Introduction
                     {
                         Intent intent = new Intent(MainActivity.this, New3Activity.class);
                         startActivity(intent);
                     }
-                    else if (finalI == 3)   //open activity one
+                    else if (finalI == 3)   //Bajet Karyakrm
                     {
                         Intent intent = new Intent(MainActivity.this, New4Activity.class);
                         startActivity(intent);
                     }
-                    else if (finalI == 4)   //open activity one
+                    else if (finalI == 4)   //Sushan
                     {
                         Intent intent = new Intent(MainActivity.this, New5Activity.class);
                         startActivity(intent);
                     }
-                    else if (finalI == 5)   //open activity one
+                    else if (finalI == 5)   //Jana pratinidhi
                     {
                         Intent intent = new Intent(MainActivity.this, New6Activity.class);
                         startActivity(intent);
                     }
-                    else if (finalI == 6)   //open activity one
+                    else if (finalI == 6)   //News
                     {
                         Intent intent = new Intent(MainActivity.this, New7Activity.class);
                         startActivity(intent);
                     }
-                    else if (finalI == 7)   //open activity one
+                    else if (finalI == 7)   //gallary
                     {
                         Intent intent = new Intent(MainActivity.this, New8Activity.class);
                         startActivity(intent);
                     }
-                    else if (finalI == 8)   //open activity one
+                    else if (finalI == 8)   //Hello Gaupalika
                     {
                         Intent intent = new Intent(MainActivity.this, jsonTest.class);
                         startActivity(intent);
@@ -120,10 +119,6 @@ public class MainActivity extends AppCompatActivity
             });
         }
     }
-
-
-
-
 
 
     public void setActionBarTitle(String title) {
