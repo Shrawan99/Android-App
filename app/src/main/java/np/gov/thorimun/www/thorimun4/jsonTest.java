@@ -34,20 +34,12 @@ public class jsonTest extends AppCompatActivity {
     JSONArray jsonArray;
     Boolean dataReady = false;
     final String documentString = "दस्तावेज डाउनलोड गर्नुहोस";
+
     private static boolean internetConnectivityFlag = false;
+
     private static ViewPager mPager;
     private static int currentPage = 0;
     private static int NUM_PAGES = 0;
-    //private static final Integer[] IMAGES= {R.drawable.ic_launcher_foreground,R.mipmap.ic_launcher,R.drawable.ic_launcher_foreground,R.drawable.ic_launcher_foreground};
-    //private ArrayList<Integer> ImagesArray = new ArrayList<Integer>();
-
-    public void print(String value) {
-        Log.i("TestIO", value);
-    }
-
-    public void print(int value) {
-        Log.i("TestIO", String.valueOf(value));
-    }
 
     Runnable dataRunnable = new Runnable() {
 
@@ -63,16 +55,12 @@ public class jsonTest extends AppCompatActivity {
                 BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
                 data = bufferedReader.readLine();
                 jsonArray = new JSONArray(data);
-                print(jsonArray.getJSONObject(0).getString("Title"));
-
-                dataReady = true;
                 internetConnectivityFlag = true;
-
-
+                dataReady = true;
             } catch (Exception e) {
                 internetConnectivityFlag = false;
-                Toast.makeText(jsonTest.this,"No Internet Connection, Directing to Cached Mode", Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(jsonTest.this, New6Activity.class);
+                dataReady = true;
+//                Intent intent = new Intent(jsonTest.this, New6Activity.class);
                 e.printStackTrace();
             }
         }
@@ -80,31 +68,31 @@ public class jsonTest extends AppCompatActivity {
 
     Thread dataThread = new Thread(dataRunnable);
 
-  //*  private void init() {
+    //*  private void init() {
     //    for(int i=0;i<IMAGES.length;i++)
-      //      ImagesArray.add(IMAGES[i]);
+    //      ImagesArray.add(IMAGES[i]);
 
-       // mPager = (ViewPager) findViewById(R.id.pager);
-        //mPager.setAdapter(new ImageAdapter(jsonTest.this,ImagesArray));
+    // mPager = (ViewPager) findViewById(R.id.pager);
+    //mPager.setAdapter(new ImageAdapter(jsonTest.this,ImagesArray));
 
-        //NUM_PAGES =IMAGES.length;
+    //NUM_PAGES =IMAGES.length;
 
-        //final Handler handler = new Handler();
-     //   final Runnable Update = new Runnable() {
-         //   public void run() {
-             //   if (currentPage == NUM_PAGES) {
-          //          currentPage = 0;
-              //  }
-            //    mPager.setCurrentItem(currentPage++, true);
-            //}
-       // };
-       // Timer swipeTimer = new Timer();
-      //  swipeTimer.schedule(new TimerTask() {
-      //      @Override
-        //    public void run() {
-       //         handler.post(Update);
-       //     }
-      //  }, 3000, 3000);
+    //final Handler handler = new Handler();
+    //   final Runnable Update = new Runnable() {
+    //   public void run() {
+    //   if (currentPage == NUM_PAGES) {
+    //          currentPage = 0;
+    //  }
+    //    mPager.setCurrentItem(currentPage++, true);
+    //}
+    // };
+    // Timer swipeTimer = new Timer();
+    //  swipeTimer.schedule(new TimerTask() {
+    //      @Override
+    //    public void run() {
+    //         handler.post(Update);
+    //     }
+    //  }, 3000, 3000);
     //}
 
     @Override
@@ -116,7 +104,7 @@ public class jsonTest extends AppCompatActivity {
 
         dataThread.start();
 
-       // init();
+        // init();
 
         while (!dataReady);
 
@@ -138,40 +126,31 @@ public class jsonTest extends AppCompatActivity {
                         editor.putString("Body" + i, jsonArray.getJSONObject(i).getString("Body"));
                     }
                     if (jsonArray.getJSONObject(i).getString("Documents").length() != 0) {
-                        //   child.add(jsonArray.getJSONObject(i).getString("Document"));
                         child.add(documentString);
                         editor.putString("Documents" + i, documentString);
                     }
                     listNoticeBody.put(listNoticeHeader.get(i), child);
-
                 }
                 editor.commit();
-            }
-            else {
-                Integer listLength = NoticesPreferences.getInt("listLenght", 0);
+            } else {
+                Toast.makeText(jsonTest.this,"No Internet Connection, Directing to Cached Mode", Toast.LENGTH_SHORT).show();
+                int listLength = NoticesPreferences.getInt("listLength", 0);
                 for (int i = 0; i < listLength; i++) {
                     child = new ArrayList<String>();
-//                    listNoticeHeader.add(jsonArray.getJSONObject(i).getString("Title") + "\n");
                     listNoticeHeader.add(NoticesPreferences.getString("Title" + i, "NA"));
                     if (!NoticesPreferences.getString("Body" + i, "NA").contentEquals("NA")) {
-//                        child.add(jsonArray.getJSONObject(i).getString("Body"));
                         child.add(NoticesPreferences.getString("Body" + i, "NA"));
                     }
                     if (!NoticesPreferences.getString("Documents" + i, "NA").contentEquals("NA")) {
-                        //   child.add(jsonArray.getJSONObject(i).getString("Document"));
                         child.add(NoticesPreferences.getString("Documents" + i, "NA"));
                     }
                     listNoticeBody.put(listNoticeHeader.get(i), child);
                 }
             }
-            ArrayList<String> map2=(ArrayList<String>) NoticesPreferences.getAll();
-            HashMap<String, List<String>> map=(HashMap<String, List<String>>)NoticesPreferences.getAll();
-
             listAdapter = new ListAdapter(this, listNoticeHeader, listNoticeBody);
             expandableListView.setAdapter(listAdapter);
-
         } catch (Exception e) {
-                 e.printStackTrace();
+            e.printStackTrace();
         }
 
         expandableListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
@@ -179,13 +158,11 @@ public class jsonTest extends AppCompatActivity {
             public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
                 if (listAdapter.getChild(groupPosition, childPosition).toString().contentEquals(documentString)) {
                     try {
-//                        print(jsonArray.getJSONObject(groupPosition).getString("Document"));
                         String urlLink = jsonArray.getJSONObject(groupPosition).getString("Documents");
                         Intent intent = new Intent(Intent.ACTION_VIEW);
                         intent.setData(Uri.parse(urlLink));
                         startActivity(intent);
                     } catch (Exception e) {
-
                         e.printStackTrace();
                     }
                 }

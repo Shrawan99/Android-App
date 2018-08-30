@@ -171,22 +171,21 @@ public class MainActivity extends AppCompatActivity
        switch (id){
 
            case R.id.nav_home:
-               Intent h= new Intent(MainActivity.this,MainActivity.class);
+               Intent h= new Intent(MainActivity.this,New1Activity.class);
                 startActivity(h);
                 break;
 
            case R.id.nav_gallery:
-               Intent i= new Intent(MainActivity.this,HomeActivity.class);
+               Intent i= new Intent(MainActivity.this,New7Activity.class);
                startActivity(i);
                break;
             // this is done, now let us go and intialise the home page.
             // after this lets start copying the above.
       }
 
-        /*
+
         if (id == R.id.nav_home) {
             // Handle the Home action
-
 
         Intent myintnt = new Intent(MainActivity.this, New1Activity.class);
         startActivity(myintnt);
@@ -194,20 +193,32 @@ public class MainActivity extends AppCompatActivity
             //code end
 
         } else if (id == R.id.nav_gallery) {
-            Intent myintnt = new Intent(MainActivity.this,HomeActivity.class);
+            Intent myintnt = new Intent(MainActivity.this,New7Activity.class);
             startActivity(myintnt);
             return false;
 
         } else if (id == R.id.nav_slideshow) {
+            Intent myintnt = new Intent(MainActivity.this,New6Activity.class);
+            startActivity(myintnt);
+            return false;
 
         } else if (id == R.id.nav_manage) {
+            Intent myintnt = new Intent(MainActivity.this,jsonTest.class);
+            startActivity(myintnt);
+            return false;
 
         } else if (id == R.id.nav_share) {
+            Intent myintnt = new Intent(MainActivity.this,Staff_Activity.class);
+            startActivity(myintnt);
+            return false;
 
         } else if (id == R.id.nav_send) {
+            Intent myintnt = new Intent(MainActivity.this,New8Activity.class);
+            startActivity(myintnt);
+            return false;
 
         }
-*/
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
