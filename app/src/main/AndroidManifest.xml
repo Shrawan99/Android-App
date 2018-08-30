@@ -30,7 +30,8 @@
         <activity android:name=".New7Activity" />
         <activity android:name=".New8Activity" />
         <activity android:name=".HomeActivity" />
-        <activity android:name=".jsonTest"></activity>
+        <activity android:name=".jsonTest" />
+        <activity android:name=".Staff_Activity"/>
     </application>
 
 </manifest>

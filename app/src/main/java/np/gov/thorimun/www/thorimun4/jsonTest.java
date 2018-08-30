@@ -33,10 +33,8 @@ public class jsonTest extends AppCompatActivity {
     String data;
     JSONArray jsonArray;
     Boolean dataReady = false;
-    final String documentString = "डाउनलोड गर्नुहोस";
-
+    final String documentString = "दस्तावेज डाउनलोड गर्नुहोस";
     private static boolean internetConnectivityFlag = false;
-
     private static ViewPager mPager;
     private static int currentPage = 0;
     private static int NUM_PAGES = 0;
@@ -148,7 +146,8 @@ public class jsonTest extends AppCompatActivity {
 
                 }
                 editor.commit();
-            } else {
+            }
+            else {
                 Integer listLength = NoticesPreferences.getInt("listLenght", 0);
                 for (int i = 0; i < listLength; i++) {
                     child = new ArrayList<String>();
@@ -169,7 +168,6 @@ public class jsonTest extends AppCompatActivity {
             HashMap<String, List<String>> map=(HashMap<String, List<String>>)NoticesPreferences.getAll();
 
             listAdapter = new ListAdapter(this, listNoticeHeader, listNoticeBody);
-
             expandableListView.setAdapter(listAdapter);
 
         } catch (Exception e) {

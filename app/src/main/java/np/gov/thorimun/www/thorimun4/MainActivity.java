@@ -113,6 +113,11 @@ public class MainActivity extends AppCompatActivity
                         Intent intent = new Intent(MainActivity.this, jsonTest.class);
                         startActivity(intent);
                     }
+                    else if (finalI == 9)   //staff
+                    {
+                        Intent intent = new Intent(MainActivity.this, Staff_Activity.class);
+                        startActivity(intent);
+                    }
 
 
                 }
