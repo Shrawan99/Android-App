@@ -41,8 +41,8 @@
 
                 <TextView
                     android:id="@+id/home_id"
-                    android:text=" ठोरी गाउँपालिका \n  सुवर्णपुर, पर्सा  "
-                    android:textSize="35sp"
+                    android:text=" ठोरी गाउँपालिका \n   सुवर्णपुर, पर्सा  "
+                    android:textSize="38sp"
                     android:textColor="@android:color/white"
                     android:layout_centerInParent="true"
                     android:layout_width="wrap_content"
@@ -445,7 +445,7 @@
                             android:layout_height="wrap_content" />
 
                         <TextView
-                            android:text="चौमासिक प्रतिवेदन"
+                            android:text="कर्मचारी विवरण"
                             android:textAlignment="center"
                             android:textColor="@android:color/black"
                             android:textSize="13sp"
