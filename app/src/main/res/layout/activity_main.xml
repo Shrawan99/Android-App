@@ -49,9 +49,20 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
-                    android:text=" ठोरी गाउँपालिका \n   सुवर्णपुर, पर्सा  "
+                    android:text="ठोरी गाउँपालिका"
+                    android:layout_above="@id/home_text"
+                    android:gravity="center"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:textSize="35sp" />
+                <TextView
+                    android:id="@+id/home_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="@string/sologon_text"
+                    android:gravity="center"
                     android:textColor="@android:color/white"
-                    android:textSize="38sp" />
+                    android:textSize="15sp" />
 
 
             </RelativeLayout>
