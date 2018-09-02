@@ -6,16 +6,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
+    tools:context=".MainActivity"
     tools:openDrawer="start">
 
     <include
         layout="@layout/app_bar_main"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:visibility="visible" />
 
     <android.support.design.widget.NavigationView
         android:id="@+id/nav_view"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
@@ -26,42 +28,40 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-
         <LinearLayout
-            android:orientation="vertical"
-            android:background="@drawable/bg"
-            android:weightSum="10"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg"
+            android:orientation="vertical"
+            android:weightSum="10">
 
             <RelativeLayout
-                android:layout_weight="2"
                 android:layout_width="match_parent"
-                android:layout_height="0dp">
+                android:layout_height="0dp"
+                android:layout_weight="2">
 
                 <TextView
                     android:id="@+id/home_id"
-                    android:text=" ठोरी गाउँपालिका \n   सुवर्णपुर, पर्सा  "
-                    android:textSize="38sp"
-                    android:textColor="@android:color/white"
-                    android:layout_centerInParent="true"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text=" ठोरी गाउँपालिका \n   सुवर्णपुर, पर्सा  "
+                    android:textColor="@android:color/white"
+                    android:textSize="38sp" />
 
 
             </RelativeLayout>
 
             <GridLayout
                 android:id="@+id/mainGrid"
-                android:columnCount="2"
-                android:rowCount="3"
-                android:alignmentMode="alignMargins"
-                android:columnOrderPreserved="false"
-                android:layout_weight="8"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
+                android:layout_weight="8"
+                android:alignmentMode="alignMargins"
+                android:columnCount="2"
+                android:columnOrderPreserved="false"
                 android:padding="14dp"
-                >
+                android:rowCount="3">
 
                 <!-- Row 1 -->
 
@@ -70,35 +70,34 @@
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:layout_columnWeight="1"
-                    android:layout_rowWeight="1"
                     android:layout_marginBottom="16dp"
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="16dp"
-                    app:cardElevation="8dp"
+                    android:layout_rowWeight="1"
                     app:cardCornerRadius="8dp"
-                    >
+                    app:cardElevation="8dp">
 
                     <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal|center_vertical"
                         android:layout_margin="16dp"
-                        android:orientation="vertical"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
+                        android:orientation="vertical">
 
                         <ImageView
-                            android:src="@drawable/me_time"
-                            android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:src="@drawable/me_time" />
 
                         <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:text="गृहपृष्ठ"
                             android:textAlignment="center"
                             android:textColor="@android:color/black"
                             android:textSize="15sp"
-                            android:textStyle="bold"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
+                            android:textStyle="bold" />
 
                     </LinearLayout>
 
@@ -109,35 +108,34 @@
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:layout_columnWeight="1"
-                    android:layout_rowWeight="1"
                     android:layout_marginBottom="16dp"
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="16dp"
-                    app:cardElevation="8dp"
+                    android:layout_rowWeight="1"
                     app:cardCornerRadius="8dp"
-                    >
+                    app:cardElevation="8dp">
 
                     <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal|center_vertical"
                         android:layout_margin="16dp"
-                        android:orientation="vertical"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
+                        android:orientation="vertical">
 
                         <ImageView
-                            android:src="@drawable/family_time"
-                            android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:src="@drawable/family_time" />
 
                         <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:text="कार्यालयको परिचय"
                             android:textAlignment="center"
                             android:textColor="@android:color/black"
                             android:textSize="15sp"
-                            android:textStyle="bold"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
+                            android:textStyle="bold" />
 
                     </LinearLayout>
 
@@ -151,35 +149,34 @@
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:layout_columnWeight="1"
-                    android:layout_rowWeight="1"
                     android:layout_marginBottom="16dp"
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="16dp"
-                    app:cardElevation="8dp"
+                    android:layout_rowWeight="1"
                     app:cardCornerRadius="8dp"
-                    >
+                    app:cardElevation="8dp">
 
                     <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal|center_vertical"
                         android:layout_margin="16dp"
-                        android:orientation="vertical"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
+                        android:orientation="vertical">
 
                         <ImageView
-                            android:src="@drawable/lovely_time"
-                            android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:src="@drawable/lovely_time" />
 
                         <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:text="बजेट कार्यक्रम "
                             android:textAlignment="center"
                             android:textColor="@android:color/black"
                             android:textSize="15sp"
-                            android:textStyle="bold"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
+                            android:textStyle="bold" />
 
                     </LinearLayout>
 
@@ -190,35 +187,34 @@
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:layout_columnWeight="1"
-                    android:layout_rowWeight="1"
                     android:layout_marginBottom="16dp"
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="16dp"
-                    app:cardElevation="8dp"
+                    android:layout_rowWeight="1"
                     app:cardCornerRadius="8dp"
-                    >
+                    app:cardElevation="8dp">
 
                     <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal|center_vertical"
                         android:layout_margin="16dp"
-                        android:orientation="vertical"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
+                        android:orientation="vertical">
 
                         <ImageView
-                            android:src="@drawable/team_time"
-                            android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:src="@drawable/team_time" />
 
                         <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:text="शुसासन सेवा"
                             android:textAlignment="center"
                             android:textColor="@android:color/black"
                             android:textSize="15sp"
-                            android:textStyle="bold"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
+                            android:textStyle="bold" />
 
                     </LinearLayout>
 
@@ -232,35 +228,34 @@
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:layout_columnWeight="1"
-                    android:layout_rowWeight="1"
                     android:layout_marginBottom="16dp"
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="16dp"
-                    app:cardElevation="8dp"
+                    android:layout_rowWeight="1"
                     app:cardCornerRadius="8dp"
-                    >
+                    app:cardElevation="8dp">
 
                     <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal|center_vertical"
                         android:layout_margin="16dp"
-                        android:orientation="vertical"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
+                        android:orientation="vertical">
 
                         <ImageView
-                            android:src="@drawable/friends"
-                            android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:src="@drawable/friends" />
 
                         <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:text="जन प्रतिनिधि"
                             android:textAlignment="center"
                             android:textColor="@android:color/black"
                             android:textSize="15sp"
-                            android:textStyle="bold"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
+                            android:textStyle="bold" />
 
                     </LinearLayout>
 
@@ -271,35 +266,34 @@
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:layout_columnWeight="1"
-                    android:layout_rowWeight="1"
                     android:layout_marginBottom="16dp"
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="16dp"
-                    app:cardElevation="8dp"
+                    android:layout_rowWeight="1"
                     app:cardCornerRadius="8dp"
-                    >
+                    app:cardElevation="8dp">
 
                     <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal|center_vertical"
                         android:layout_margin="16dp"
-                        android:orientation="vertical"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
+                        android:orientation="vertical">
 
                         <ImageView
-                            android:src="@drawable/calendar"
-                            android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:src="@drawable/calendar" />
 
                         <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:text="सूचना/जानकारी"
                             android:textAlignment="center"
                             android:textColor="@android:color/black"
                             android:textSize="15sp"
-                            android:textStyle="bold"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
+                            android:textStyle="bold" />
 
                     </LinearLayout>
 
@@ -309,35 +303,34 @@
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:layout_columnWeight="1"
-                    android:layout_rowWeight="1"
                     android:layout_marginBottom="16dp"
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="16dp"
-                    app:cardElevation="8dp"
+                    android:layout_rowWeight="1"
                     app:cardCornerRadius="8dp"
-                    >
+                    app:cardElevation="8dp">
 
                     <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal|center_vertical"
                         android:layout_margin="16dp"
-                        android:orientation="vertical"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
+                        android:orientation="vertical">
 
                         <ImageView
-                            android:src="@drawable/calendar"
-                            android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:src="@drawable/calendar" />
 
                         <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:text="ग्यालरी"
                             android:textAlignment="center"
                             android:textColor="@android:color/black"
                             android:textSize="15sp"
-                            android:textStyle="bold"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
+                            android:textStyle="bold" />
 
                     </LinearLayout>
 
@@ -347,35 +340,34 @@
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:layout_columnWeight="1"
-                    android:layout_rowWeight="1"
                     android:layout_marginBottom="16dp"
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="16dp"
-                    app:cardElevation="8dp"
+                    android:layout_rowWeight="1"
                     app:cardCornerRadius="8dp"
-                    >
+                    app:cardElevation="8dp">
 
                     <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal|center_vertical"
                         android:layout_margin="16dp"
-                        android:orientation="vertical"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
+                        android:orientation="vertical">
 
                         <ImageView
-                            android:src="@drawable/calendar"
-                            android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:src="@drawable/calendar" />
 
                         <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:text="हेलो गाॅउपालिका"
                             android:textAlignment="center"
                             android:textColor="@android:color/black"
                             android:textSize="15sp"
-                            android:textStyle="bold"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
+                            android:textStyle="bold" />
 
                     </LinearLayout>
 
@@ -385,35 +377,34 @@
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:layout_columnWeight="1"
-                    android:layout_rowWeight="1"
                     android:layout_marginBottom="16dp"
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="16dp"
-                    app:cardElevation="8dp"
+                    android:layout_rowWeight="1"
                     app:cardCornerRadius="8dp"
-                    >
+                    app:cardElevation="8dp">
 
                     <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal|center_vertical"
                         android:layout_margin="16dp"
-                        android:orientation="vertical"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
+                        android:orientation="vertical">
 
                         <ImageView
-                            android:src="@drawable/calendar"
-                            android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:src="@drawable/calendar" />
 
                         <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:text="JSON Test"
                             android:textAlignment="center"
                             android:textColor="@android:color/black"
                             android:textSize="15sp"
-                            android:textStyle="bold"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
+                            android:textStyle="bold" />
 
                     </LinearLayout>
 
@@ -423,35 +414,34 @@
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:layout_columnWeight="1"
-                    android:layout_rowWeight="1"
                     android:layout_marginBottom="16dp"
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="16dp"
-                    app:cardElevation="8dp"
+                    android:layout_rowWeight="1"
                     app:cardCornerRadius="8dp"
-                    >
+                    app:cardElevation="8dp">
 
                     <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal|center_vertical"
                         android:layout_margin="16dp"
-                        android:orientation="vertical"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
+                        android:orientation="vertical">
 
                         <ImageView
-                            android:src="@drawable/calendar"
-                            android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:src="@drawable/calendar" />
 
                         <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:text="कर्मचारी विवरण"
                             android:textAlignment="center"
                             android:textColor="@android:color/black"
                             android:textSize="13sp"
-                            android:textStyle="bold"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
+                            android:textStyle="bold" />
 
                     </LinearLayout>
 
@@ -461,35 +451,34 @@
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:layout_columnWeight="1"
-                    android:layout_rowWeight="1"
                     android:layout_marginBottom="16dp"
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="16dp"
-                    app:cardElevation="8dp"
+                    android:layout_rowWeight="1"
                     app:cardCornerRadius="8dp"
-                    >
+                    app:cardElevation="8dp">
 
                     <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal|center_vertical"
                         android:layout_margin="16dp"
-                        android:orientation="vertical"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
+                        android:orientation="vertical">
 
                         <ImageView
-                            android:src="@drawable/calendar"
-                            android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:src="@drawable/calendar" />
 
                         <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:text="वार्षिक प्रतिवेदन"
                             android:textAlignment="center"
                             android:textColor="@android:color/black"
                             android:textSize="15sp"
-                            android:textStyle="bold"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
+                            android:textStyle="bold" />
 
                     </LinearLayout>
 
@@ -499,35 +488,34 @@
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:layout_columnWeight="1"
-                    android:layout_rowWeight="1"
                     android:layout_marginBottom="16dp"
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="16dp"
-                    app:cardElevation="8dp"
+                    android:layout_rowWeight="1"
                     app:cardCornerRadius="8dp"
-                    >
+                    app:cardElevation="8dp">
 
                     <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal|center_vertical"
                         android:layout_margin="16dp"
-                        android:orientation="vertical"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
+                        android:orientation="vertical">
 
                         <ImageView
-                            android:src="@drawable/calendar"
-                            android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:src="@drawable/calendar" />
 
                         <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:text="लेखा प्रतिवेदन"
                             android:textAlignment="center"
                             android:textColor="@android:color/black"
                             android:textSize="15sp"
-                            android:textStyle="bold"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
+                            android:textStyle="bold" />
 
                     </LinearLayout>
 
@@ -536,8 +524,6 @@
             </GridLayout>
 
         </LinearLayout>
-
-
 
 
     </ScrollView>
