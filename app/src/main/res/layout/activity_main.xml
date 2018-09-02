@@ -92,7 +92,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
-                            android:src="@drawable/employee" />
+                            android:src="@drawable/home_icon" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -130,7 +130,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
-                            android:src="@drawable/family_time" />
+                            android:src="@drawable/intro_icon" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -171,7 +171,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
-                            android:src="@drawable/lovely_time" />
+                            android:src="@drawable/bajet_icon" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -209,7 +209,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
-                            android:src="@drawable/team_time" />
+                            android:src="@drawable/governance_icon" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -250,7 +250,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
-                            android:src="@drawable/friends" />
+                            android:src="@drawable/elected_icon" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -288,7 +288,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
-                            android:src="@drawable/calendar" />
+                            android:src="@drawable/notice_icon" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -325,7 +325,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
-                            android:src="@drawable/calendar" />
+                            android:src="@drawable/gallery_icon" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -362,7 +362,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
-                            android:src="@drawable/calendar" />
+                            android:src="@drawable/telephone_icon" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -399,7 +399,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
-                            android:src="@drawable/calendar" />
+                            android:src="@drawable/rules_icon" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -436,7 +436,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
-                            android:src="@drawable/calendar" />
+                            android:src="@drawable/employee_icon" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -473,7 +473,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
-                            android:src="@drawable/calendar" />
+                            android:src="@drawable/year_report_icon" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -510,7 +510,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
-                            android:src="@drawable/calendar" />
+                            android:src="@drawable/monthly_report_icon" />
 
                         <TextView
                             android:layout_width="wrap_content"
