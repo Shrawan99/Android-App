@@ -1,6 +1,8 @@
 package np.gov.thorimun.www.thorimun4;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -18,6 +20,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.GridLayout;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -27,16 +30,21 @@ public class MainActivity extends AppCompatActivity
     Toolbar toolbar=null;
     GridLayout mainGrid;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        setNavigationViewListener();
         mainGrid = (GridLayout)findViewById(R.id.mainGrid);
         setSingleEvent(mainGrid);
+      // ActionBar actionBar= (ActionBar)findViewById(R.id.actionBar);
+        //actionBar.setDisplayHomeAsUpEnabled(true);
+       // actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM | ActionBar.DISPLAY_SHOW_HOME | ActionBar.DISPLAY_HOME_AS_UP);
+      Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+      //setSupportActionBar(toolbar);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -54,11 +62,14 @@ public class MainActivity extends AppCompatActivity
         toggle.syncState();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+
+    }
+
+    public void setNavigationViewListener(){
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
     }
-
 
     private void setSingleEvent(GridLayout mainGrid) {
         //Loop all child item of Main Grid
@@ -134,6 +145,7 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onBackPressed() {
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
@@ -145,10 +157,8 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-
             getMenuInflater().inflate(R.menu.main, menu);
             return true;
-
     }
 
     @Override
@@ -157,12 +167,18 @@ public class MainActivity extends AppCompatActivity
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            System.exit(0);
-            return true;
+
+        if (id == R.id.about_setting){
+            Toast toast =Toast.makeText(this, "App is Designed by Shrawan Raut, IT officer of Thori Rural Municipality.Visit (https://github.com/Shrawan99/Thori_new) for Collaboration.", Toast.LENGTH_LONG);
+            View view =toast.getView();
+            view.getBackground().setColorFilter(Color.GREEN, PorterDuff.Mode.SRC_IN);
+            toast.show();
+            return (true);
         }
+        if (id == R.id.action_settings) {
+        System.exit(0);
+        return true;}
 
         return super.onOptionsItemSelected(item);
     }
@@ -171,61 +187,48 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
+        switch (item.getItemId()) {
 
-        int id = item.getItemId();
-       switch (id){
-
-           case R.id.nav_home:
-               Intent h= new Intent(MainActivity.this,New1Activity.class);
-                startActivity(h);
+            case R.id.nav_home: {
+                // Handle the Home action
+                Intent myintnt = new Intent(MainActivity.this, New1Activity.class);
+                startActivity(myintnt);
+                break;
+                //code end
+            }
+            case R.id.nav_gallery: {
+                Intent myintnt = new Intent(MainActivity.this, New7Activity.class);
+                startActivity(myintnt);
+                break;
+            }
+            case R.id.nav_slideshow: {
+                Intent myintnt = new Intent(MainActivity.this, New6Activity.class);
+                startActivity(myintnt);
                 break;
 
-           case R.id.nav_gallery:
-               Intent i= new Intent(MainActivity.this,New7Activity.class);
-               startActivity(i);
-               break;
-            // this is done, now let us go and intialise the home page.
-            // after this lets start copying the above.
-      }
+            }case R.id.nav_manage: {
+                Intent myintnt = new Intent(MainActivity.this, jsonTest.class);
+                startActivity(myintnt);
+                break;
 
+            }case R.id.nav_share: {
+                Intent myintnt = new Intent(MainActivity.this, Staff_Activity.class);
+                startActivity(myintnt);
+                break;
 
-        if (id == R.id.nav_home) {
-            // Handle the Home action
+            }case R.id.nav_send: {
+                Intent myintnt = new Intent(MainActivity.this, New8Activity.class);
+                startActivity(myintnt);
+                break;
 
-        Intent myintnt = new Intent(MainActivity.this, New1Activity.class);
-        startActivity(myintnt);
-        return false;
-            //code end
-
-        } else if (id == R.id.nav_gallery) {
-            Intent myintnt = new Intent(MainActivity.this,New7Activity.class);
-            startActivity(myintnt);
-
-
-        } else if (id == R.id.nav_slideshow) {
-            Intent myintnt = new Intent(MainActivity.this,New6Activity.class);
-            startActivity(myintnt);
-            return false;
-
-        } else if (id == R.id.nav_manage) {
-            Intent myintnt = new Intent(MainActivity.this,jsonTest.class);
-            startActivity(myintnt);
-            return false;
-
-        } else if (id == R.id.nav_share) {
-            Intent myintnt = new Intent(MainActivity.this,Staff_Activity.class);
-            startActivity(myintnt);
-            return false;
-
-        } else if (id == R.id.nav_send) {
-            Intent myintnt = new Intent(MainActivity.this,New8Activity.class);
-            startActivity(myintnt);
-            return false;
-
+            }
+            default:
+                return super.onOptionsItemSelected(item);
         }
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
-    }
+
+}
+
 }
