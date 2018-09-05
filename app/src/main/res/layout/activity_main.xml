@@ -17,11 +17,14 @@
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header_main"
         app:menu="@menu/activity_main_drawer" />
+
     <include
         layout="@layout/app_bar_main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="visible" />
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -30,7 +33,8 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="50dp">
+
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -48,11 +52,12 @@
                     android:id="@+id/home_id"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:text="ठोरी गाउँपालिका"
                     android:layout_above="@id/home_text"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="@font/calligraffitti"
                     android:gravity="center"
-                    android:textColor="@android:color/holo_red_dark"
+                    android:text="ठोरी गाउँपालिका"
+                    android:textColor="@android:color/white"
                     android:textSize="35sp" />
                 <TextView
                     android:id="@+id/home_text"

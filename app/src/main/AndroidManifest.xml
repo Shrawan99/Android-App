@@ -12,26 +12,97 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
-            android:label="Thori Rural Municipality"
+            android:name=".SplashActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
-        <activity android:name=".New1Activity" />
-        <activity android:name=".New2Activity" />
-        <activity android:name=".New3Activity" />
-        <activity android:name=".New4Activity" />
-        <activity android:name=".New5Activity" />
-        <activity android:name=".New6Activity" />
-        <activity android:name=".New7Activity" />
-        <activity android:name=".New8Activity" />
+
+        <activity android:name=".MainActivity" />
+        <activity android:name=".New1Activity"
+                  android:label="गृहपृष्ठ"
+                  android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity"/>
+        </activity>
+
+        <activity android:name=".New2Activity"
+        android:label="कार्यालयको परिचय"
+        android:parentActivityName=".MainActivity">
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".MainActivity"/>
+        </activity>
+
+        <activity android:name=".New3Activity"
+            android:label="बजेट कार्यक्रम"
+            android:parentActivityName=".MainActivity">
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".MainActivity"/>
+        </activity>
+
+        <activity android:name=".New4Activity"
+            android:label="शुसासन सेवा"
+            android:parentActivityName=".MainActivity">
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".MainActivity"/>
+        </activity>>
+        <activity android:name=".New5Activity"
+            android:label="जन प्रतिनिधि"
+            android:parentActivityName=".MainActivity">
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".MainActivity"/>
+        </activity>
+        <activity android:name=".New6Activity"
+            android:label="सुचना/जानकारी "
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity"/>
+        </activity>/>
+
+        <activity android:name=".New7Activity"
+            android:label="ग्यालरी "
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity"/>
+        </activity>
+        <activity android:name=".New8Activity"
+            android:label="हेलो गाउँपालिका"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity"/>
+        </activity>
+
         <activity android:name=".HomeActivity" />
-        <activity android:name=".jsonTest" />
-        <activity android:name=".Staff_Activity"/>
+
+        <activity android:name=".jsonTest"
+            android:label="सुचना/जानकारी "
+            android:parentActivityName=".MainActivity">
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".MainActivity"/>
+        </activity>
+        <activity android:name=".Staff_Activity"
+            android:label="कर्मचारी विवरण "
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity"/>
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
