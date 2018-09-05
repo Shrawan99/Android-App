@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity
 
     DrawerLayout drawer;
     NavigationView navigationView;
-    Toolbar toolbar=null;
+    Toolbar toolbar;
     GridLayout mainGrid;
 
 
@@ -39,12 +39,7 @@ public class MainActivity extends AppCompatActivity
         setNavigationViewListener();
         mainGrid = (GridLayout)findViewById(R.id.mainGrid);
         setSingleEvent(mainGrid);
-      // ActionBar actionBar= (ActionBar)findViewById(R.id.actionBar);
-        //actionBar.setDisplayHomeAsUpEnabled(true);
-       // actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM | ActionBar.DISPLAY_SHOW_HOME | ActionBar.DISPLAY_HOME_AS_UP);
-      Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-      //setSupportActionBar(toolbar);
-
+      //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -55,7 +50,7 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
@@ -168,7 +163,11 @@ public class MainActivity extends AppCompatActivity
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
         //noinspection SimplifiableIfStatement
-
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
+        } else {
+            drawer.openDrawer(GravityCompat.START);
+        }
         if (id == R.id.about_setting){
             Toast toast =Toast.makeText(this, "App is Designed by Shrawan Raut, IT officer of Thori Rural Municipality.Visit (https://github.com/Shrawan99/Thori_new) for Collaboration.", Toast.LENGTH_LONG);
             View view =toast.getView();
@@ -225,8 +224,8 @@ public class MainActivity extends AppCompatActivity
             default:
                 return super.onOptionsItemSelected(item);
         }
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
+       // DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        //drawer.closeDrawer(GravityCompat.START);
         return true;
 
 }
