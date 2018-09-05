@@ -2,36 +2,36 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
-
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Home" />
-        <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
-        <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Notice/News" />
+            android:icon="@drawable/ic_contact"
+            android:title="सम्पर्क विवरण" />
+
         <item
             android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+            android:icon="@drawable/intro_icon"
+            android:title="प्राय:सोधिने प्रस्नहरु" />
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/telephone_icon"
+            android:title="आपतकालीन नम्बर" />
+        <item
+            android:id="@+id/nav_slideshow"
+            android:icon="@drawable/rules_icon"
+            android:title="ऐन कानुनहरु" />
     </group>
 
     <item android:title="Communicate">
         <menu>
             <item
                 android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
+                android:icon="@drawable/calendar"
+                android:title="गुनासो तथा समस्या दर्ता" />
             <item
                 android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Contact" />
+                android:icon="@drawable/notice_icon"
+                android:title="सुचना तथा जानकारी" />
         </menu>
     </item>
 
