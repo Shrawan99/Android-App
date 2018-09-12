@@ -38,13 +38,13 @@ public class New7Activity extends AppCompatActivity {
 
             webView.getSettings().setJavaScriptEnabled(true);
             webView.setWebViewClient(new WebViewClient());
-            webView.loadUrl("http://thorimun.gov.np/photo-gallery");
+            webView.loadUrl("http://thorimun.gov.np/photo-gallery_app");
 
         } else {
             Toast.makeText(this, "No Internet Connection, Directing to Cached Mode", Toast.LENGTH_SHORT).show();
             webView.getSettings().setJavaScriptEnabled(true);
             webView.setWebViewClient(new WebViewClient());
-            webView.loadUrl("http://thorimun.gov.np/photo-gallery");
+            webView.loadUrl("http://thorimun.gov.np/photo-gallery_app");
             webView.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
         }
 

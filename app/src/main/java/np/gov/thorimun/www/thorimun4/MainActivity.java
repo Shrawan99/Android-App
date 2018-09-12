@@ -118,14 +118,19 @@ public class MainActivity extends AppCompatActivity
                         Intent intent = new Intent(MainActivity.this, New8Activity.class);
                         startActivity(intent);
                     }
-                    else if (finalI == 8)   //Hello Gaupalika
+                    else if (finalI == 8)   //Rules and regulation
                     {
-                        Intent intent = new Intent(MainActivity.this, jsonTest.class);
+                        Intent intent = new Intent(MainActivity.this, Rules_RegulationActivity.class);
                         startActivity(intent);
                     }
                     else if (finalI == 9)   //staff
                     {
                         Intent intent = new Intent(MainActivity.this, Staff_Activity.class);
+                        startActivity(intent);
+                    }
+                    else if (finalI == 10)   //
+                    {
+                        Intent intent = new Intent(MainActivity.this, jsonTest.class);
                         startActivity(intent);
                     }
 
