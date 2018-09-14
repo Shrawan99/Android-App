@@ -78,17 +78,17 @@ public class MainActivity extends AppCompatActivity
                 @Override
                 public void onClick(View view) {
 
-                    if (finalI == 0)   //open activity one
+                    if (finalI == 0)   //Home Page
                     {
                         Intent intent = new Intent(MainActivity.this, New1Activity.class);
                         startActivity(intent);
                     }
-                    else if (finalI == 1)   //Home Page
+                    else if (finalI == 1)   //Office Introduction
                     {
                         Intent intent = new Intent(MainActivity.this, New2Activity.class);
                         startActivity(intent);
                     }
-                    else if (finalI == 2)   //Office Introduction
+                    else if (finalI == 2)   //Bajet Karyakrm
                     {
                         Intent intent = new Intent(MainActivity.this, New3Activity.class);
                         startActivity(intent);
