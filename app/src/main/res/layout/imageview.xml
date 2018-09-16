@@ -3,13 +3,13 @@
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="300px">
 
-  <!--  <ImageView
+   <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="300px"
         android:adjustViewBounds="true"
         android:layout_gravity="start"
-        android:src="@mipmap/ic_launcher"
-        android:scaleType="centerCrop"/> -->
+        android:src="@drawable/governance_icon"
+        android:scaleType="centerCrop"/>
 
 </FrameLayout>
