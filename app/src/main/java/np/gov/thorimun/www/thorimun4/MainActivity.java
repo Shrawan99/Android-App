@@ -133,6 +133,11 @@ public class MainActivity extends AppCompatActivity
                         Intent intent = new Intent(MainActivity.this, jsonTest.class);
                         startActivity(intent);
                     }
+                    else if (finalI == 11)   //contact
+                    {
+                        Intent intent = new Intent(MainActivity.this, contactActivity.class);
+                        startActivity(intent);
+                    }
 
 
                 }
@@ -202,37 +207,37 @@ public class MainActivity extends AppCompatActivity
                 // Handle the Home action
                 Intent myintnt = new Intent(MainActivity.this, contactActivity.class);
                 startActivity(myintnt);
-                drawer.closeDrawers();
+                //drawer.closeDrawers();
                 break;
                 //code end
             }
             case R.id.nav_gallery: {
                 Intent myintnt = new Intent(MainActivity.this, FaqActivity.class);
                 startActivity(myintnt);
-                drawer.closeDrawers();
+                //drawer.closeDrawers();
                 break;
             }
             case R.id.nav_slideshow: {
                 Intent myintnt = new Intent(MainActivity.this, New6Activity.class);
                 startActivity(myintnt);
-                drawer.closeDrawers();
+                //drawer.closeDrawers();
                 break;
 
             }
             case R.id.nav_manage: {
-                Intent myintnt = new Intent(MainActivity.this, jsonTest.class);
+                Intent myintnt = new Intent(MainActivity.this, Rules_RegulationActivity.class);
                 startActivity(myintnt);
                 break;
 
             }
             case R.id.nav_share: {
-                Intent myintnt = new Intent(MainActivity.this, Staff_Activity.class);
+                Intent myintnt = new Intent(MainActivity.this, New8Activity.class);
                 startActivity(myintnt);
                 break;
 
             }
             case R.id.nav_send: {
-                Intent myintnt = new Intent(MainActivity.this, New8Activity.class);
+                Intent myintnt = new Intent(MainActivity.this, New6Activity.class);
                 startActivity(myintnt);
                 break;
 
