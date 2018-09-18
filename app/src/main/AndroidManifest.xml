@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
@@ -12,7 +13,7 @@
         android:label="Thori Rural Municipality"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
             android:name=".SplashActivity"
             android:theme="@style/AppTheme.NoActionBar">
@@ -54,7 +55,7 @@
         <meta-data
             android:name="android.support.PARENT_ACTIVITY"
             android:value=".MainActivity"/>
-        </activity>>
+        </activity>
         <activity android:name=".New5Activity"
             android:label="जन प्रतिनिधि"
             android:parentActivityName=".MainActivity">
@@ -68,7 +69,7 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity"/>
-        </activity>/>
+        </activity>
 
         <activity android:name=".New7Activity"
             android:label="ग्यालरी "
@@ -122,6 +123,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".New3Activity"/>
         </activity>
+
         <activity android:name=".contactActivity"
             android:label="सम्पर्क विवरण"
             android:parentActivityName=".MainActivity">
@@ -131,6 +133,15 @@
         </activity>
         <activity android:name=".FaqActivity"
             android:label="प्राय:सोधिने प्रस्नहरु"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity"/>
+        </activity>
+        <activity android:name=".Emergency_contact"/>
+
+        <activity android:name=".Mun_services_activity"
+            android:label="हाम्रो सेवाहरु"
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

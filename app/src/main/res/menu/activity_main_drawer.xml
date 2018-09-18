@@ -7,7 +7,6 @@
             android:id="@+id/nav_home"
             android:icon="@drawable/ic_contact"
             android:title="सम्पर्क विवरण" />
-
         <item
             android:id="@+id/nav_manage"
             android:icon="@drawable/intro_icon"
