@@ -24,9 +24,9 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Toast;
 
-public class FaqActivity extends AppCompatActivity {
+public class facebookActivity extends AppCompatActivity {
     WebView webView;
-    String Url = "http://thorimun.gov.np/faq_app";
+    String Url = "https://www.facebook.com/Thorimunicipality";
     private Context mContext;
     private Activity mActivity;
     private static final int MY_PERMISSION_REQUEST_CODE = 123;
@@ -36,8 +36,8 @@ public class FaqActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // mContext = getApplicationContext();
-        mActivity = FaqActivity.this;
-        setContentView(R.layout.activity_faq);
+        mActivity = facebookActivity.this;
+        setContentView(R.layout.activity_facebook);
         webView = (WebView) findViewById(R.id.webView);
         checkConnection();
     }

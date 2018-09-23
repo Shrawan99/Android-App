@@ -78,32 +78,32 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         Intent intent = new Intent(MainActivity.this, New2Activity.class);
                         startActivity(intent);
                     }
-                    else if (finalI == 2)   //Bajet Karyakrm
-                    {
-                        Intent intent = new Intent(MainActivity.this, New3Activity.class);
-                        startActivity(intent);
-                    }
-                    else if (finalI == 3)   //Bajet Karyakrm
-                    {
-                        Intent intent = new Intent(MainActivity.this, New4Activity.class);
-                        startActivity(intent);
-                    }
-                    else if (finalI == 4)   //Sushan
-                    {
-                        Intent intent = new Intent(MainActivity.this, New5Activity.class);
-                        startActivity(intent);
-                    }
-                    else if (finalI == 5)   //Jana pratinidhi
+                    else if (finalI == 2)   //Suchana
                     {
                         Intent intent = new Intent(MainActivity.this, New6Activity.class);
                         startActivity(intent);
                     }
-                    else if (finalI == 6)   //News
+                    else if (finalI == 3)   //Sushan /sample form
+                    {
+                        Intent intent = new Intent(MainActivity.this, New4Activity.class);
+                        startActivity(intent);
+                    }
+                    else if (finalI == 4)   //Janapratinidi
+                    {
+                        Intent intent = new Intent(MainActivity.this, New5Activity.class);
+                        startActivity(intent);
+                    }
+                    else if (finalI == 5)   //Karmachari
+                    {
+                        Intent intent = new Intent(MainActivity.this, Staff_Activity.class);
+                        startActivity(intent);
+                    }
+                    else if (finalI == 6)   // Gallary
                     {
                         Intent intent = new Intent(MainActivity.this, New7Activity.class);
                         startActivity(intent);
                     }
-                    else if (finalI == 7)   //gallary
+                    else if (finalI == 7)   //Gunaso
                     {
                         Intent intent = new Intent(MainActivity.this, New8Activity.class);
                         startActivity(intent);
@@ -113,9 +113,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         Intent intent = new Intent(MainActivity.this, Rules_RegulationActivity.class);
                         startActivity(intent);
                     }
-                    else if (finalI == 9)   //staff
+                    else if (finalI == 9)   //Bajet
                     {
-                        Intent intent = new Intent(MainActivity.this, Staff_Activity.class);
+                        Intent intent = new Intent(MainActivity.this, New3Activity.class);
                         startActivity(intent);
                     }
                     else if (finalI == 10)   //Mun Services
@@ -218,6 +218,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
             case R.id.nav_send: {
                 Intent myintnt = new Intent(MainActivity.this, New6Activity.class);
+                startActivity(myintnt);
+                break;
+            }
+            case R.id.nav_facebook: {
+                Intent myintnt = new Intent(MainActivity.this, facebookActivity.class);
+                startActivity(myintnt);
+                break;
+            }
+            case R.id.nav_song: {
+                Intent myintnt = new Intent(MainActivity.this, song_Activity.class);
                 startActivity(myintnt);
                 break;
             }
